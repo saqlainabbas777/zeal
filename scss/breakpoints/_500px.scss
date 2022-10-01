@@ -2,6 +2,11 @@
 @use "../general-styles/typography" as type;
 
 @media screen and (min-width: 500px){
+  // ----------------------------------- Utility classes
+  .padd {
+    padding: 5rem 4rem;
+  }
+
   // ----------------------------------- header
   .header {
     padding: 1rem 2rem;
@@ -18,6 +23,17 @@
 
     &__hamburger {
       display: none;
+    }
+  }
+
+  // ----------------------------------- hero
+  .hero {
+    &__content {
+      &--title {
+        span:first-child {
+          display: inline;
+        }
+      }
     }
   }
 }

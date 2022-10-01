@@ -22,6 +22,10 @@ $font-size: (
         "s": 1rem,
 );
 
+@function fs($f-s) {
+  @return map-get($font-size, $f-s);
+}
+
 $font-weight: (
         "regular": 400,
         "medium": 500,

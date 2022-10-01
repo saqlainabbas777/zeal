@@ -1,0 +1,44 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.link-hover {
+  padding: 1rem 2rem;
+  font-size: type.fs(m);
+
+  align-self: start;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: scaleX(.3);
+    transform-origin: left;
+    background-color: clr.clrs(clr-primary);
+    z-index: -1;
+    transition: transform .25s ease-in-out;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  i {
+    transform: rotate(-45deg);
+    transition: transform .4s ease-in-out;
+  }
+
+  &:hover i {
+    transform: rotate(0);
+  }
+}

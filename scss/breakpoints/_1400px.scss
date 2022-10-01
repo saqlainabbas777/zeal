@@ -1,0 +1,19 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+
+@media screen and (min-width: 1400px){
+  // ----------------------------------- hero
+  .hero {
+    &__content {
+      &--title {
+        transform: rotate(0);
+        font-size: 15rem;
+
+        span:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

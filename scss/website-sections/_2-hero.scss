@@ -1,0 +1,36 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.hero {
+  background-image: url("../images/hero-bg.jpg");
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+    }
+
+    &--title {
+      font-size: type.fs(xxxl);
+      color: clr.clrs(clr-white);
+      text-transform: uppercase;
+      line-height: .9;
+      font-weight: type.fw(w-black);
+
+      span:first-child {
+        color: clr.clrs(clr-primary);
+        display: block;
+      }
+    }
+
+    &--link {
+      color: clr.clrs(clr-white);
+      text-transform: uppercase;
+    }
+  }
+}

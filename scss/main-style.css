@@ -68,6 +68,53 @@ button {
   z-index: 9;
 }
 
+.padd {
+  padding: 5rem 2rem;
+}
+
+.link-hover {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.link-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0.3);
+  transform-origin: left;
+  background-color: rgb(254, 84, 26);
+  z-index: -1;
+  transition: transform 0.25s ease-in-out;
+}
+.link-hover:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.link-hover i {
+  transform: rotate(-45deg);
+  transition: transform 0.4s ease-in-out;
+}
+.link-hover:hover i {
+  transform: rotate(0);
+}
+
+.content-limit {
+  display: flex;
+  justify-content: center;
+}
+.content-limit > div:first-child {
+  max-width: 1400px;
+}
+
 .header {
   display: flex;
   gap: 2rem;
@@ -161,7 +208,39 @@ button {
   width: 75%;
 }
 
+.hero {
+  background-image: url("../images/hero-bg.jpg");
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.hero__content div {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+.hero__content--title {
+  font-size: 7rem;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  line-height: 0.9;
+  font-weight: 900;
+}
+.hero__content--title span:first-child {
+  color: rgb(254, 84, 26);
+  display: block;
+}
+.hero__content--link {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
 @media screen and (min-width: 500px) {
+  .padd {
+    padding: 5rem 4rem;
+  }
   .header {
     padding: 1rem 2rem;
   }
@@ -176,13 +255,46 @@ button {
   .header__hamburger {
     display: none;
   }
+  .hero__content--title span:first-child {
+    display: inline;
+  }
+}
+@media screen and (min-width: 800px) {
+  .hero__content {
+    flex-direction: row;
+    align-items: center;
+  }
+  .hero__content > div {
+    flex-basis: 60%;
+  }
+  .hero__content--title {
+    font-size: 12rem;
+  }
 }
 @media screen and (min-width: 1000px) {
+  .padd {
+    padding: 5rem 8rem;
+  }
   .header {
     padding: 1.5rem 4rem;
   }
   .header__nav a {
     font-size: 2rem;
+  }
+  .hero__content--title {
+    transform: rotate(-10deg);
+  }
+  .hero__content--title span:last-child {
+    margin-left: 15rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .hero__content--title {
+    transform: rotate(0);
+    font-size: 15rem;
+  }
+  .hero__content--title span:last-child {
+    margin-left: 0;
   }
 }
 

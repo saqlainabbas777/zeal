@@ -2,6 +2,11 @@
 @use "../general-styles/typography" as type;
 
 @media screen and (min-width: 1000px){
+  // ----------------------------------- utility classes
+  .padd {
+    padding: 5rem 8rem;
+  }
+
   // ----------------------------------- header
   .header {
     padding: 1.5rem 4rem;
@@ -9,6 +14,19 @@
     &__nav {
       a {
         font-size: 2rem;
+      }
+    }
+  }
+
+  // ----------------------------------- hero
+  .hero {
+    &__content {
+      &--title {
+        transform: rotate(-10deg);
+
+        span:last-child {
+          margin-left: 15rem;
+        }
       }
     }
   }
