@@ -53,4 +53,137 @@ button {
   font-size: 10px;
 }
 
+.overlay {
+  position: relative;
+  z-index: 9;
+}
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 9;
+}
+
+.header {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(6, 21, 28);
+  padding: 1rem 1.5rem;
+}
+.header__logo {
+  color: rgb(254, 84, 26);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: fixed;
+  top: 0;
+  right: 50%;
+  transform: translateX(-50%) translateY(-6rem) scaleY(0);
+  transform-origin: top;
+  background-color: rgb(6, 21, 28);
+  padding: 2rem 4rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  transition: transform 0.25s ease-in-out;
+  z-index: 10;
+}
+.header__nav a {
+  color: rgb(255, 255, 255);
+}
+.header__nav a:hover {
+  color: rgb(254, 84, 26);
+}
+.header .display-nav {
+  transform: translateX(50%) translateY(6rem) scaleY(1);
+  transform-origin: top;
+}
+.header__hamburger {
+  height: 1.5rem;
+  width: 3rem;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  position: fixed;
+  top: 2rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  z-index: 11;
+}
+.header__hamburger:hover .line-1 {
+  width: 50%;
+}
+.header__hamburger:hover .line-3 {
+  width: 100%;
+}
+.header__hamburger div {
+  height: 3px;
+  background-color: rgb(254, 84, 26);
+  transition: all 0.25s ease-in-out;
+}
+.header__hamburger .line-1 {
+  width: 100%;
+}
+.header__hamburger .line-2 {
+  width: 70%;
+}
+.header__hamburger .line-3 {
+  width: 50%;
+}
+.header .hamburger-toggled {
+  transform: rotate(0);
+}
+.header .hamburger-toggled:hover .line-1, .header .hamburger-toggled:hover .line-3 {
+  width: 75%;
+}
+.header .line-1-toggled {
+  transform: rotate(45deg) translateX(0.6rem) translateY(0.5rem);
+  width: 75%;
+}
+.header .line-2-toggled {
+  transform: scale(0);
+}
+.header .line-3-toggled {
+  transform: rotate(-45deg) translateX(0.4rem) translateY(-0.2rem);
+  width: 75%;
+}
+
+@media screen and (min-width: 500px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+  .header__nav {
+    transform: scale(1);
+    position: static;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+    flex-direction: row;
+  }
+  .header__hamburger {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .header {
+    padding: 1.5rem 4rem;
+  }
+  .header__nav a {
+    font-size: 2rem;
+  }
+}
+
 /*# sourceMappingURL=main-style.css.map */

@@ -1,0 +1,118 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.header {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: clr.clrs(clr-black);
+  padding: 1rem 1.5rem;
+
+  &__logo {
+    color: clr.clrs(clr-primary);
+    font-weight: type.fw(bold);
+    font-size: 2.5rem;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    position: fixed;
+    top: 0;
+    right: 50%;
+    transform: translateX(-50%) translateY(-6rem) scaleY(0);
+    transform-origin: top;
+    background-color: clr.clrs(clr-black);
+
+    padding: 2rem 4rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius:.5rem;
+
+    transition: transform .25s ease-in-out;
+
+    z-index: 10;
+
+    a {
+      color: clr.clrs(clr-white);
+
+      &:hover {
+        color: clr.clrs(clr-primary);
+      }
+    }
+  }
+
+  .display-nav {
+    transform: translateX(50%) translateY(6rem) scaleY(1);
+    transform-origin: top;
+  }
+
+  &__hamburger {
+    height: 1.5rem;
+    width: 3rem;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+
+    position: fixed;
+    top: 2rem;
+    right: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+
+    z-index: 11;
+
+    &:hover .line-1 {
+      width: 50%;
+    }
+    &:hover .line-3 {
+      width: 100%;
+    }
+
+    div {
+      height: 3px;
+      background-color: clr.clrs(clr-primary);
+      transition: all 0.25s ease-in-out;
+    }
+
+    .line-1 {
+      width: 100%;
+    }
+    .line-2 {
+      width: 70%;
+    }
+    .line-3 {
+      width: 50%;
+    }
+  }
+
+  .hamburger-toggled {
+    transform: rotate(0);
+
+    &:hover .line-1,
+    &:hover .line-3 {
+      width: 75%;
+    }
+  }
+
+  .line-1-toggled {
+    transform: rotate(45deg) translateX(0.6rem) translateY(0.5rem);
+    width: 75%;
+  }
+
+  .line-2-toggled {
+    transform: scale(0);
+  }
+
+  .line-3-toggled {
+    transform: rotate(-45deg) translateX(0.4rem) translateY(-0.2rem);
+    width: 75%;
+  }
+}
