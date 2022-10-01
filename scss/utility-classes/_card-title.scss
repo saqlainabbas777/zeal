@@ -1,0 +1,8 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.card-title {
+  font-size: type.fs(mc);
+  font-weight: type.fw(bold);
+  line-height: 1;
+}

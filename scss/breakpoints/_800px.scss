@@ -2,6 +2,14 @@
 @use "../general-styles/typography" as type;
 
 @media screen and (min-width: 800px){
+  // ----------------------------------- Utility classes
+  .sec-title {
+    span {
+      display: inline-block;
+      word-spacing: 2px;
+    }
+  }
+
   // ----------------------------------- hero
   .hero {
     &__content {

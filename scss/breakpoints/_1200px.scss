@@ -1,0 +1,49 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+@media screen and (min-width: 1200px) {
+  // ----------------------------------- utility classes
+  .sec-title {
+    font-size: type.fs(xxl);
+  }
+
+  .card-title {
+    font-size: type.fs(lc);
+  }
+
+  // ----------------------------------- trainer
+  .trainer {
+    &__content {
+      &--card {
+        padding-right: 4rem;
+        gap: 0 2rem;
+
+        &__img {
+          grid-column: 1/7;
+        }
+
+        &__title,
+        &__desc,
+        .card-links-container {
+          grid-column: 7/ -1;
+          margin: 0;
+        }
+      }
+
+      &--card:nth-child(3) {
+        padding-left: 4rem;
+
+        .trainer__content--card__img {
+          grid-column: 5/-1;
+        }
+
+        .trainer__content--card__title,
+        .trainer__content--card__desc,
+        .card-links-container {
+          grid-column: 1/5;
+        }
+
+      }
+    }
+  }
+}

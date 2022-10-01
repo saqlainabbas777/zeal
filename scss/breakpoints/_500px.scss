@@ -7,6 +7,11 @@
     padding: 5rem 4rem;
   }
 
+  .card-links-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
   // ----------------------------------- header
   .header {
     padding: 1rem 2rem;
@@ -36,4 +41,14 @@
       }
     }
   }
+
+  // ----------------------------------- Trainer
+  .trainer {
+    &__content {
+      &--card {
+        gap: 4rem;
+      }
+    }
+  }
+
 }

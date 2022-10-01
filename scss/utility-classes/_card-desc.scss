@@ -1,0 +1,5 @@
+@use "../general-styles/typography" as type;
+
+.card-desc {
+  font-size: type.fs(sc);
+}

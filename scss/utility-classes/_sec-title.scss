@@ -1,0 +1,16 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.sec-title {
+  font-size: type.fs(xl);
+  font-weight: type.fw(extra-bold);
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  word-spacing: -2px;
+  line-height: 1;
+
+  span {
+    color: clr.clrs(clr-primary);
+    display: block;
+  }
+}

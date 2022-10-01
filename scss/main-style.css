@@ -74,7 +74,6 @@ button {
 
 .link-hover {
   padding: 1rem 2rem;
-  font-size: 2rem;
   align-self: start;
   display: flex;
   align-items: center;
@@ -113,6 +112,54 @@ button {
 }
 .content-limit > div:first-child {
   max-width: 1400px;
+}
+
+.sec-title {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  word-spacing: -2px;
+  line-height: 1;
+}
+.sec-title span {
+  color: rgb(254, 84, 26);
+  display: block;
+}
+
+.sec-desc {
+  font-size: 2rem;
+}
+
+.card-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.card-desc {
+  font-size: 1.5rem;
+}
+
+.card-link {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+}
+.card-link:last-child {
+  padding-left: 0;
+}
+.card-link:last-child:hover {
+  color: rgb(254, 84, 26);
+}
+.card-link:last-child::before {
+  display: none;
+}
+
+.card-links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
 }
 
 .header {
@@ -237,9 +284,42 @@ button {
   text-transform: uppercase;
 }
 
+.trainer__content {
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  gap: 4rem;
+}
+.trainer__content > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.trainer__content--link {
+  color: rgb(6, 21, 28);
+}
+.trainer__content--card {
+  display: grid;
+  grid-template-rows: repeat(4, min-content);
+  gap: 2rem;
+  background-image: url("../images/trainer-card-bg.jpg");
+  background-size: cover;
+  padding-bottom: 4rem;
+}
+.trainer__content--card__title, .trainer__content--card__desc,
+.trainer__content--card .card-links-container {
+  margin: 0 2rem;
+}
+.trainer__content--card__title, .trainer__content--card__desc {
+  color: rgb(255, 255, 255);
+}
+
 @media screen and (min-width: 500px) {
   .padd {
     padding: 5rem 4rem;
+  }
+  .card-links-container {
+    flex-direction: row;
+    gap: 2rem;
   }
   .header {
     padding: 1rem 2rem;
@@ -258,8 +338,15 @@ button {
   .hero__content--title span:first-child {
     display: inline;
   }
+  .trainer__content--card {
+    gap: 4rem;
+  }
 }
 @media screen and (min-width: 800px) {
+  .sec-title span {
+    display: inline-block;
+    word-spacing: 2px;
+  }
   .hero__content {
     flex-direction: row;
     align-items: center;
@@ -275,6 +362,18 @@ button {
   .padd {
     padding: 5rem 8rem;
   }
+  .card-title {
+    font-size: 800;
+  }
+  .sec-desc {
+    font-size: calc(2.5rem - 2.5px);
+  }
+  .card-desc {
+    font-size: calc(2rem - 2.5px);
+  }
+  .card-link {
+    font-size: 2rem;
+  }
   .header {
     padding: 1.5rem 4rem;
   }
@@ -286,6 +385,91 @@ button {
   }
   .hero__content--title span:last-child {
     margin-left: 15rem;
+  }
+  .trainer__content--card {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    padding-bottom: 0;
+    padding-right: 2rem;
+  }
+  .trainer__content--card__img {
+    grid-column: 1/5;
+    grid-row: 1/-1;
+  }
+  .trainer__content--card__title, .trainer__content--card__desc,
+.trainer__content--card .card-links-container {
+    grid-column: 5/-1;
+    margin: 0;
+  }
+  .trainer__content--card__title {
+    grid-row: 1/2;
+    align-self: end;
+    margin-top: 4rem;
+  }
+  .trainer__content--card__desc {
+    grid-row: 2/3;
+    align-self: center;
+    line-height: 1.7;
+  }
+  .trainer__content--card .card-links-container {
+    grid-row: 3/4;
+    margin-bottom: 4rem;
+  }
+  .trainer__content--card:nth-child(3) {
+    padding-right: 0;
+    padding-left: 2rem;
+  }
+  .trainer__content--card:nth-child(3) .trainer__content--card__img {
+    grid-column: 8/-1;
+    grid-row: 1/-1;
+  }
+  .trainer__content--card:nth-child(3) .trainer__content--card__title,
+.trainer__content--card:nth-child(3) .trainer__content--card__desc,
+.trainer__content--card:nth-child(3) .card-links-container {
+    grid-column: 1/8;
+    margin: 0;
+  }
+  .trainer__content--card:nth-child(3) .trainer__content--card__title {
+    grid-row: 1/2;
+    margin-top: 4rem;
+  }
+  .trainer__content--card:nth-child(3) .trainer__content--card__desc {
+    grid-row: 2/3;
+  }
+  .trainer__content--card:nth-child(3) .card-links-container {
+    grid-row: 3/4;
+    margin-bottom: 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .sec-title {
+    font-size: 5.5rem;
+  }
+  .card-title {
+    font-size: 3.5rem;
+  }
+  .trainer__content--card {
+    padding-right: 4rem;
+    gap: 0 2rem;
+  }
+  .trainer__content--card__img {
+    grid-column: 1/7;
+  }
+  .trainer__content--card__title, .trainer__content--card__desc,
+.trainer__content--card .card-links-container {
+    grid-column: 7/-1;
+    margin: 0;
+  }
+  .trainer__content--card:nth-child(3) {
+    padding-left: 4rem;
+  }
+  .trainer__content--card:nth-child(3) .trainer__content--card__img {
+    grid-column: 5/-1;
+  }
+  .trainer__content--card:nth-child(3) .trainer__content--card__title,
+.trainer__content--card:nth-child(3) .trainer__content--card__desc,
+.trainer__content--card:nth-child(3) .card-links-container {
+    grid-column: 1/5;
   }
 }
 @media screen and (min-width: 1400px) {

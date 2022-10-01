@@ -1,10 +1,26 @@
 @use "../general-styles/colors" as clr;
 @use "../general-styles/typography" as type;
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1000px) {
   // ----------------------------------- utility classes
   .padd {
     padding: 5rem 8rem;
+  }
+
+  .card-title {
+    font-size: type.fw(extra-bold);
+  }
+
+  .sec-desc {
+    font-size: calc(type.fs(mc) - 2.5px);
+  }
+
+  .card-desc {
+    font-size: calc(type.fs(m) - 2.5px);
+  }
+
+  .card-link {
+    font-size: type.fs(m);
   }
 
   // ----------------------------------- header
@@ -27,6 +43,82 @@
         span:last-child {
           margin-left: 15rem;
         }
+      }
+    }
+  }
+
+  // ----------------------------------- Trainer
+  .trainer {
+    &__content {
+      &--card {
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(3, min-content);
+        padding-bottom: 0;
+        padding-right: 2rem;
+
+        &__img {
+          grid-column: 1/ 5;
+          grid-row: 1/ -1;
+        }
+
+        &__title,
+        &__desc,
+        .card-links-container {
+          grid-column: 5/ -1;
+          margin: 0;
+        }
+
+        &__title {
+          grid-row: 1/ 2;
+          align-self: end;
+
+          margin-top: 4rem;
+        }
+
+        &__desc {
+          grid-row: 2/ 3;
+          align-self: center;
+          line-height: 1.7;
+        }
+
+        .card-links-container {
+          grid-row: 3/4;
+          margin-bottom: 4rem;
+        }
+
+      }
+
+      &--card:nth-child(3) {
+        padding-right: 0;
+        padding-left: 2rem;
+
+        .trainer__content--card__img {
+          grid-column: 8/-1;
+          grid-row: 1/-1;
+        }
+
+        .trainer__content--card__title,
+        .trainer__content--card__desc,
+        .card-links-container {
+          grid-column: 1/8;
+          margin: 0;
+        }
+
+        .trainer__content--card__title {
+          grid-row: 1/2;
+
+          margin-top: 4rem;
+        }
+
+        .trainer__content--card__desc {
+          grid-row: 2/3;
+        }
+
+        .card-links-container {
+          grid-row: 3/4;
+          margin-bottom: 4rem;
+        }
+
       }
     }
   }
