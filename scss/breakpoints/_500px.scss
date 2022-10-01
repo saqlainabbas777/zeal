@@ -51,4 +51,17 @@
     }
   }
 
+  // ----------------------------------- Features
+  .features {
+    &__content {
+      &--cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, min-content);
+
+        &__card:nth-child(2n+1) {
+          border-left: 3px solid clr.clrs(clr-primary);
+        }
+      }
+    }
+  }
 }
