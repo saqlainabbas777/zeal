@@ -1,0 +1,80 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.gallery {
+  margin-bottom: 4rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &--img {
+      position: relative;
+
+      figcaption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scaleY(1);
+
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        gap: .5rem;
+
+        color: clr.clrs(clr-white);
+        font-size: type.fs(mc);
+        font-weight: type.fw(extra-bold);
+        line-height: 1;
+        transition: all .45s ease-in-out;
+        z-index: 1;
+
+        i {
+          transform: rotate(-45deg);
+          color: clr.clrs(clr-primary);
+          transition: all .45s ease-in-out;
+        }
+      }
+
+      @media (hover) {
+        figcaption {
+          transform: translate(-50%, -50%) scaleY(0);
+
+          i {
+            transform: rotate(0);
+            color: clr.clrs(clr-white);
+          }
+        }
+
+        &:hover figcaption{
+          transform: translate(-50%, -50%) scaleY(1);
+
+          i {
+            transform: rotate(-45deg);
+            color: clr.clrs(clr-primary);
+          }
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0 0 0 /0.65);
+        transition: all .25s ease-in-out;
+      }
+
+      @media (hover) {
+        &::after {
+          background-color: rgba(0 0 0 / 0);
+        }
+
+        &:hover::after {
+          background-color: rgba(0 0 0 /0.65);
+        }
+      }
+    }
+  }
+}
