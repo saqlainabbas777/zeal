@@ -1,0 +1,11 @@
+$colors: (
+        "clr-primary": rgb(254 84 26),
+        "clr-black": rgb(6 21 28),
+        "clr-white": rgb(255 255 255),
+        "clr-light-grey": rgb(226 226 226),
+);
+
+@function clrs($clr){
+  @return  map-get($colors, $clr);
+}
+
