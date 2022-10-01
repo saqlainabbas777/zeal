@@ -1,0 +1,53 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.about {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    &--trainer {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        &--role,
+        &--expertise {
+          font-size: type.fs(m);
+          font-weight: type.fw(regular);
+        }
+
+        &--expertise {
+          position: relative;
+
+          &::after {
+            content: '';
+
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 5rem;
+            height: 5px;
+            background-color: clr.clrs(clr-primary);
+            z-index: -1;
+          }
+        }
+
+        &--social {
+          display: flex;
+          gap: 1rem;
+
+          i {
+            font-size: type.fs(m);
+          }
+        }
+      }
+    }
+  }
+}

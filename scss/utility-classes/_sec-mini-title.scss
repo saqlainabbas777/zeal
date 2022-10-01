@@ -1,0 +1,11 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.sec-mini-title {
+  font-size: type.fs(sc);
+  color: clr.clrs(clr-white);
+  background-color: clr.clrs(clr-primary);
+  padding: .25rem .5rem;
+
+  align-self: flex-start;
+}

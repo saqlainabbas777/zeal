@@ -122,4 +122,22 @@
       }
     }
   }
+
+  // ----------------------------------- about
+  .about {
+    &__content {
+      &--trainer {
+        flex-direction: row;
+
+        &__info {
+          flex-basis: 50%;
+          align-self: center;
+        }
+      }
+
+      &--trainer:last-of-type {
+        flex-direction: row-reverse;
+      }
+    }
+  }
 }

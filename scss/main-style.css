@@ -131,6 +131,14 @@ button {
   font-size: 2rem;
 }
 
+.sec-mini-title {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(254, 84, 26);
+  padding: 0.25rem 0.5rem;
+  align-self: flex-start;
+}
+
 .card-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -341,6 +349,46 @@ button {
   align-self: flex-start;
 }
 
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.about__content--trainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.about__content--trainer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.about__content--trainer__info--role, .about__content--trainer__info--expertise {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.about__content--trainer__info--expertise {
+  position: relative;
+}
+.about__content--trainer__info--expertise::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 5rem;
+  height: 5px;
+  background-color: rgb(254, 84, 26);
+  z-index: -1;
+}
+.about__content--trainer__info--social {
+  display: flex;
+  gap: 1rem;
+}
+.about__content--trainer__info--social i {
+  font-size: 2rem;
+}
+
 @media screen and (min-width: 500px) {
   .padd {
     padding: 5rem 4rem;
@@ -474,6 +522,16 @@ button {
   .trainer__content--card:nth-child(3) .card-links-container {
     grid-row: 3/4;
     margin-bottom: 4rem;
+  }
+  .about__content--trainer {
+    flex-direction: row;
+  }
+  .about__content--trainer__info {
+    flex-basis: 50%;
+    align-self: center;
+  }
+  .about__content--trainer:last-of-type {
+    flex-direction: row-reverse;
   }
 }
 @media screen and (min-width: 1200px) {
