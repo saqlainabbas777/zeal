@@ -49,6 +49,13 @@ button {
   font-size: 1.5rem;
 }
 
+button {
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+}
+
 :root {
   font-size: 10px;
 }
@@ -618,11 +625,70 @@ button {
   outline: none;
   padding: 1rem 2rem;
 }
-.contact__content--form button {
-  color: white;
+
+.footer {
+  background-image: url("../images/footer-bg.jpg");
+}
+.footer__content {
+  flex-grow: 1;
+  display: grid;
+  grid-template-rows: repeat(5, min-content);
+  gap: 5rem;
+}
+.footer__content--logo {
+  font-size: 7rem;
+  color: rgb(254, 84, 26);
+}
+.footer__content--programs, .footer__content--links, .footer__content--newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer__content--programs__title, .footer__content--links__title, .footer__content--newsletter__title {
+  font-size: 2rem;
+}
+.footer__content--programs ul, .footer__content--links ul, .footer__content--newsletter ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.footer__content--programs ul a, .footer__content--links ul a, .footer__content--newsletter ul a {
+  color: rgb(255, 255, 255);
+}
+.footer__content--newsletter {
+  gap: 2rem;
+}
+.footer__content--newsletter fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer__content--newsletter fieldset input {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-radius: 0;
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 1rem;
+}
+.footer__content--social {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.footer__content--social p {
+  color: rgb(255, 255, 255);
   font-size: 1.5rem;
-  background: none;
-  border: none;
+}
+.footer__content--social div {
+  display: flex;
+  gap: 2rem;
+}
+.footer__content--social div i {
+  color: rgb(255, 255, 255);
+  transition: all 0.25s ease-in-out;
+}
+.footer__content--social div i:hover {
+  color: rgb(254, 84, 26);
 }
 
 @media screen and (min-width: 500px) {
@@ -680,6 +746,30 @@ button {
   .contact__content--form {
     grid-column: 2/-1;
     grid-row: 2/3;
+  }
+  .footer__content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, min-content);
+  }
+  .footer__content--logo {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+  .footer__content--programs {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .footer__content--links {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .footer__content--newsletter {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+  }
+  .footer__content--social {
+    grid-column: 1/-1;
+    grid-row: 4/5;
   }
 }
 @media screen and (min-width: 800px) {
@@ -745,6 +835,26 @@ button {
   .testimonial__content--img {
     grid-column: 2/3;
     grid-row: 2/3;
+  }
+  .footer__content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, min-content);
+  }
+  .footer__content--programs {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .footer__content--links {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .footer__content--newsletter {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+  .footer__content--social {
+    grid-column: 1/-1;
+    grid-row: 3/4;
   }
 }
 @media screen and (min-width: 1000px) {

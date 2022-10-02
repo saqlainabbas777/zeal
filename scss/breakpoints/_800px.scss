@@ -101,4 +101,32 @@
       }
     }
   }
+
+  // --------------------------------------- Footer
+  .footer {
+    &__content {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, min-content);
+
+      &--programs {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      &--links {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+
+      &--newsletter {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+      }
+
+      &--social {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+      }
+    }
+  }
 }

@@ -1,0 +1,84 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.footer {
+  background-image: url('../images/footer-bg.jpg');
+
+  &__content {
+    flex-grow: 1;
+
+    display: grid;
+    grid-template-rows: repeat(5, min-content);
+    gap: 5rem;
+
+    &--logo {
+      font-size: type.fs(xxxl);
+      color: clr.clrs(clr-primary);
+    }
+
+    &--programs,
+    &--links,
+    &--newsletter {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &__title {
+        font-size: type.fs(m);
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+
+        a {
+          color: clr.clrs(clr-white);
+        }
+      }
+    }
+
+    &--newsletter {
+      gap: 2rem;
+
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        input {
+          border-bottom: 1px solid clr.clrs(clr-white);
+          border-radius: 0;
+          color: clr.clrs(clr-white);
+          padding: .5rem 1rem;
+        }
+      }
+    }
+
+    &--social {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+
+      p {
+        color: clr.clrs(clr-white);
+        font-size: type.fs(sc);
+      }
+
+      div {
+        display: flex;
+        gap: 2rem;
+
+        i {
+          color: clr.clrs(clr-white);
+          transition: all .25s ease-in-out;
+
+          &:hover {
+            color: clr.clrs(clr-primary);
+          }
+        }
+      }
+    }
+  }
+}
