@@ -58,4 +58,47 @@
       }
     }
   }
+
+  // ----------------------------------- testimonial
+
+  .testimonial {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, min-content);
+      gap: 0 4rem;
+
+      &--title {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+
+        span {
+          display: block;
+        }
+      }
+
+      &--info {
+        grid-column: 1/2;
+        grid-row: 2/3;
+
+        align-self: center;
+
+        &__text {
+          font-size: type.fs(mc);
+        }
+
+        &__name {
+          font-size: type.fs(m);
+        }
+
+        &__program {
+          font-size: type.fs(sc);
+        }
+      }
+
+      &--img {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+    }
+  }
 }

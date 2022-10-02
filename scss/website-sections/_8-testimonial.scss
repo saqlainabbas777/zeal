@@ -1,0 +1,40 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.testimonial {
+  &__content {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    gap: 5rem;
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      &__rating {
+        display: flex;
+        column-gap: .5rem;
+
+        i {
+          color: clr.clrs(clr-primary);
+          font-size: type.fs(sc);
+        }
+      }
+
+      &__text {
+        font-size: type.fs(m);
+      }
+
+      &__name {
+        font-size: type.fs(sc);
+        font-weight: type.fw(regular);
+      }
+
+      &__program {
+        font-size: type.fs(s);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    }
+  }
+}
