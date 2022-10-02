@@ -74,4 +74,28 @@
       }
     }
   }
+
+  // ----------------------------------- contact
+  .contact {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, min-content);
+      gap: 5rem 1rem;
+
+      &--titles {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+      }
+
+      &--info {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      &--form {
+        grid-column: 2/-1;
+        grid-row: 2/3;
+      }
+    }
+  }
 }

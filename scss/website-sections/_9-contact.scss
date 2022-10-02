@@ -1,0 +1,89 @@
+@use "../general-styles/colors" as clr;
+@use "../general-styles/typography" as type;
+
+.contact {
+  background-color: rgb(238 238 238);
+
+  &__content {
+    flex-grow: 1;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    gap: 5rem;
+
+    &--titles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &__number,
+      &__address,
+      &__working-hours {
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+
+        i {
+          color: clr.clrs(clr-primary);
+        }
+
+        i,
+        span {
+          font-size: type.fs(m);
+          font-weight: type.fw(bold);
+        }
+      }
+
+      &__address,
+      &__working-hours {
+        & > span {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      background-color: clr.clrs(clr-black);
+      padding: 2rem;
+
+      input,
+      textarea {
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: 1rem;
+      }
+
+      input,
+      textarea,
+      select {
+        font-size: type.fs(sc);
+        color: clr.clrs(clr-white);
+        border-radius: 0;
+        width: 100%;
+      }
+
+      select {
+        background-color: clr.clrs(clr-primary);
+        border: none;
+        outline: none;
+        padding: 1rem 2rem;
+      }
+
+      button {
+        color: white;
+
+        font-size: type.fs(sc);
+        background: none;
+        border: none;
+      }
+    }
+  }
+}

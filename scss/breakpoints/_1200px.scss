@@ -56,4 +56,24 @@
       }
     }
   }
+
+  // ----------------------------------- contact
+  .contact {
+    &__content {
+      &--info {
+        align-self: center;
+
+        i {
+          font-size: type.fs(l);
+        }
+        span {
+          font-size: type.fs(l);
+          font-family: "Sarpanch", sans-serif;
+        }
+      }
+
+      &--form {
+      }
+    }
+  }
 }

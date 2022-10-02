@@ -555,6 +555,76 @@ button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.contact {
+  background-color: rgb(238, 238, 238);
+}
+.contact__content {
+  flex-grow: 1;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  gap: 5rem;
+}
+.contact__content--titles {
+  display: flex;
+  flex-direction: column;
+}
+.contact__content--info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contact__content--info__number, .contact__content--info__address, .contact__content--info__working-hours {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.contact__content--info__number i, .contact__content--info__address i, .contact__content--info__working-hours i {
+  color: rgb(254, 84, 26);
+}
+.contact__content--info__number i,
+.contact__content--info__number span, .contact__content--info__address i,
+.contact__content--info__address span, .contact__content--info__working-hours i,
+.contact__content--info__working-hours span {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.contact__content--info__address > span, .contact__content--info__working-hours > span {
+  display: flex;
+  flex-direction: column;
+}
+.contact__content--form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: rgb(6, 21, 28);
+  padding: 2rem;
+}
+.contact__content--form input,
+.contact__content--form textarea {
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 1rem;
+}
+.contact__content--form input,
+.contact__content--form textarea,
+.contact__content--form select {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  border-radius: 0;
+  width: 100%;
+}
+.contact__content--form select {
+  background-color: rgb(254, 84, 26);
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+}
+.contact__content--form button {
+  color: white;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+}
+
 @media screen and (min-width: 500px) {
   .padd {
     padding: 5rem 4rem;
@@ -593,6 +663,23 @@ button {
   .pricing__content--plans {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, min-content);
+  }
+  .contact__content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    gap: 5rem 1rem;
+  }
+  .contact__content--titles {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+  .contact__content--info {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .contact__content--form {
+    grid-column: 2/-1;
+    grid-row: 2/3;
   }
 }
 @media screen and (min-width: 800px) {
@@ -810,6 +897,16 @@ button {
   .features__content--cards {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, min-content);
+  }
+  .contact__content--info {
+    align-self: center;
+  }
+  .contact__content--info i {
+    font-size: 3rem;
+  }
+  .contact__content--info span {
+    font-size: 3rem;
+    font-family: "Sarpanch", sans-serif;
   }
 }
 @media screen and (min-width: 1400px) {
