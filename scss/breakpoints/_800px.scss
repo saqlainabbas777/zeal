@@ -37,4 +37,25 @@
       }
     }
   }
+
+  // ----------------------------------- pricing
+  .pricing {
+    &__content {
+      &--plans {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: min-content;
+        gap: 0;
+
+        &__plan.famous-plan,
+        &__plan.expert-plan {
+          margin-left: -1px;
+          z-index: 1;
+        }
+
+        &__plan.famous-plan {
+          transform: scaleY(1.05);
+        }
+      }
+    }
+  }
 }

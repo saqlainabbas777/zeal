@@ -454,6 +454,77 @@ button {
   }
 }
 
+.pricing__content {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 5rem;
+  width: 100%;
+}
+.pricing__content--title {
+  text-align: left;
+}
+.pricing__content--plans {
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  gap: 2rem;
+}
+.pricing__content--plans__plan {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.pricing__content--plans__plan--title {
+  padding-bottom: 2rem;
+  position: relative;
+}
+.pricing__content--plans__plan--title span {
+  display: block;
+  color: rgb(254, 84, 26);
+}
+.pricing__content--plans__plan--title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 30px;
+  background-color: lightgrey;
+}
+.pricing__content--plans__plan--features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.pricing__content--plans__plan--features li {
+  font-size: 1.5rem;
+  display: flex;
+  align-self: flex-start;
+  gap: 1rem;
+}
+.pricing__content--plans__plan--features li i {
+  color: rgb(254, 84, 26);
+  margin-top: 3px;
+}
+.pricing__content--plans__plan--link {
+  color: rgb(6, 21, 28);
+  font-size: 1.5rem;
+}
+.pricing__content--plans__plan.regular-plan {
+  border: 1px solid lightgrey;
+}
+.pricing__content--plans__plan.famous-plan {
+  background-image: url("../images/pricing-card-bg.jpg");
+  background-size: cover;
+  color: rgb(255, 255, 255);
+}
+.pricing__content--plans__plan.famous-plan .pricing__content--plans__plan--link {
+  color: rgb(255, 255, 255);
+}
+.pricing__content--plans__plan.expert-plan {
+  background-color: rgb(238, 238, 238);
+}
+
 @media screen and (min-width: 500px) {
   .padd {
     padding: 5rem 4rem;
@@ -489,6 +560,10 @@ button {
   .features__content--cards__card:nth-child(2n+1) {
     border-left: 3px solid rgb(254, 84, 26);
   }
+  .pricing__content--plans {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, min-content);
+  }
 }
 @media screen and (min-width: 800px) {
   .sec-title span {
@@ -511,6 +586,18 @@ button {
   }
   .gallery__content--img:last-child {
     grid-column: 1/-1;
+  }
+  .pricing__content--plans {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content;
+    gap: 0;
+  }
+  .pricing__content--plans__plan.famous-plan, .pricing__content--plans__plan.expert-plan {
+    margin-left: -1px;
+    z-index: 1;
+  }
+  .pricing__content--plans__plan.famous-plan {
+    transform: scaleY(1.05);
   }
 }
 @media screen and (min-width: 1000px) {
